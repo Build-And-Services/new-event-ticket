@@ -39,7 +39,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-[9999] flex flex-col h-screen w-72 overflow-y-hidden bg-black duration-300 ease-linear lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-[9999] flex flex-col h-screen w-72 overflow-y-hidden bg-[#5352d9] duration-300 ease-linear lg:static lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -83,8 +83,8 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
               <li>
                 <Link
                   href={route("dashboard")}
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                    route().current("dashboard") && "bg-[#333A48]"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                    route().current("dashboard") && "bg-[#cbd6fa] text-slate-500"
                   }`}
                 >
                   <svg
@@ -117,9 +117,9 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
               </li>
               <li>
                 <Link
-                  href={route("dashboard")}
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                    route().current("dashboard") && "bg-[#333A48]"
+                  href={route("artists.index")}
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                    route().current("artists.*") && "bg-[#cbd6fa] text-slate-500"
                   }`}
                 >
                   <svg
@@ -155,8 +155,8 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                   return (
                     <>
                       <span
-                        className={`group cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                          route().current("projects.*") && "bg-[#333A48]"
+                        className={`group cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                          route().current("projects.*") && "bg-[#cbd6fa] text-slate-500"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -234,7 +234,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           <li>
                             <Link
                               href="projects"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
                                 url == "/projects" && "!text-white"
                               }`}
                             >
@@ -244,7 +244,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           <li>
                             <Link
                               href="projects"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
                                 url == "/projects" && "!text-white"
                               }`}
                             >
@@ -263,8 +263,8 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                   return (
                     <>
                       <span
-                        className={`group cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                          route().current("projects.*") && "bg-[#333A48]"
+                        className={`group cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                          route().current("projects.*") && "bg-[#cbd6fa] text-slate-500"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -342,7 +342,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           <li>
                             <Link
                               href="projects"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
                                 url == "/projects" && "!text-white"
                               }`}
                             >
@@ -352,7 +352,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           <li>
                             <Link
                               href="projects"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
                                 url == "/projects" && "!text-white"
                               }`}
                             >
@@ -362,7 +362,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           <li>
                             <Link
                               href="projects"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
                                 url == "/projects" && "!text-white"
                               }`}
                             >
@@ -379,8 +379,8 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
               <li>
                 <Link
                   href={route("dashboard")}
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                    route().current("dashboard") && "bg-[#333A48]"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                    route().current("dashboard") && "bg-[#cbd6fa] text-slate-500"
                   }`}
                 >
                   <svg
@@ -414,8 +414,8 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
               <li>
                 <Link
                   href={route("dashboard")}
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#333A48] ${
-                    route().current("dashboard") && "bg-[#333A48]"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
+                    route().current("dashboard") && "bg-[#cbd6fa] text-slate-500"
                   }`}
                 >
                   <svg

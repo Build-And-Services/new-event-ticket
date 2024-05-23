@@ -4,7 +4,7 @@ import formatRupiah from "@/Helpers/formatRupiah";
 import Pagination from "@/Components/Pagination";
 
 export default function Index({ auth, projects }) {
-  console.log(projects);
+  // console.log(projects);
   return (
     <AuthenticatedLayout user={auth.user}>
       <Head title="Projects" />
