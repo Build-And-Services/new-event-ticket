@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Project;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RoleSeeder;
+use Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,13 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Faisal Bahari',
-            'email' => 'faisal@mail.com',
-            'password' => bcrypt('password'),
-            'email_verified_at' => time()
-        ]);
+        // \App\Models\User::factory(10)->create();
 
-        Project::factory()->count(100)->hasTasks(10)->create();
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+
+        $this->call([
+            RoleSeeder::class,
+            UserSeeder::class
+        ]);
     }
 }
