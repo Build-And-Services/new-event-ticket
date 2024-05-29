@@ -150,13 +150,13 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                   Artists
                 </Link>
               </li>
-              <LinkGroup activeCondition={url.startsWith("/projects")}>
+              <LinkGroup activeCondition={url.startsWith("/events") || url.startsWith("/eventcategories")}>
                 {(handleClick, open) => {
                   return (
                     <>
                       <span
                         className={`group cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:bg-[#cbd6fa] hover:text-slate-500 ${
-                          route().current("projects.*") && "bg-[#cbd6fa] text-slate-500"
+                          (route().current("events.*") || route().current("eventcategories.*")) && "bg-[#cbd6fa] text-slate-500"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -233,9 +233,9 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                         <ul className="mt-4 mb-5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <Link
-                              href="projects"
+                              href={route("eventcategories.index")}
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
-                                url == "/projects" && "!text-white"
+                                route().current("eventcategories.index") && "text-violet-400"
                               }`}
                             >
                               Event Categories
@@ -243,9 +243,9 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                           </li>
                           <li>
                             <Link
-                              href="projects"
+                              href={route("events.index")}
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
-                                url == "/projects" && "!text-white"
+                                route().current("events.index") && "text-violet-400"
                               }`}
                             >
                               All Events
