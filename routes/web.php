@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     require __DIR__ . '/artists.php';
     require __DIR__ . '/events.php';
     require __DIR__ . '/events-category.php';
+    require __DIR__ . '/ticket.php';
 });
 
 require __DIR__ . '/auth.php';
