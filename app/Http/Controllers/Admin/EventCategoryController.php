@@ -38,10 +38,12 @@ class EventCategoryController extends Controller
 
         try {
             $request->validate([
-                'nama' => 'required',
+                'name' => 'required',
             ]);
             $eventCategory = EventCategory::findOrFail($id);
-            $eventCategory->update($request->all());
+            $eventCategory->update([
+                'name' => $request->name
+            ]);
             return redirect()->route('eventcategories.index')->with('success', 'Successfully update event category !');
         } catch (\Throwable $th) {
             return redirect()->route('eventcategories.index')->with('error', $th->getMessage());
