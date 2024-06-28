@@ -255,7 +255,7 @@ export default function Index({ sidebarOpen, setSidebarOpen }) {
                             <Link
                               href={route("events.index")}
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-[#DEE4EE] duration-300 ease-in-out hover:text-violet-400 ${
-                                route().current("events.index") &&
+                                route().current("events.*") &&
                                 "text-violet-400"
                               }`}
                             >

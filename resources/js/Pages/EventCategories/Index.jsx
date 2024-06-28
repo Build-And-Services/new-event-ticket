@@ -293,40 +293,56 @@ export default function Index({ auth, eventCategories }) {
         </div>
       )} */}
 
-
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[50px] text-white">No</TableHead>
-            <TableHead className="text-white text-center">Name</TableHead>
-            <TableHead className="text-white text-center">Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {eventCategories.map((category, index) => (
-            <TableRow key={category.id} className="bg-slate-200">
-              <TableCell className="font-medium">{index + 1}</TableCell>
-              <TableCell className="text-center">{category.name}</TableCell>
-              <TableCell className="flex gap-1 justify-center">
-                <Button
-                  onClick={() => handleEdit(category)}
-                  className="rounded-lg gap-1 duration-300 bg-yellow-200 hover:bg-yellow-400 text-yellow-500 hover:text-white"
-                >
-                  <FaPen/>
-                  Edit
-                </Button>
-                <Button
-                  className="rounded-lg gap-1 duration-300 bg-rose-200 hover:bg-rose-400 text-rose-500 hover:text-white"
-                  onClick={() => { setModalDeleteOpen(true); setDeleteData(category); }}
-                >
-                  <FaTrash/>
-                  Delete
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+<div className="max-w-full overflow-x-auto">
+          <table className="w-full table-auto">
+            <thead>
+              <tr className="bg-gray-2 text-left">
+                <th className="min-w-[40px] py-4 px-4 font-medium text-black">
+                  No
+                </th>
+                <th className="min-w-[220px] py-4 px-4 font-medium text-black">
+                  Name
+                </th>
+                <th className="py-4 px-4 font-medium text-black text-center">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {eventCategories.map((category, index) => (
+                <tr key={category.id}>
+                  <td className="border-b border-[#eee] py-5 px-4 text-black">
+                    {index + 1}
+                  </td>
+                  <td className="border-b border-[#eee] py-5 px-4">
+                    <h5 className="font-medium text-black">{category.name}</h5>
+                  </td>
+                  <td className="border-b border-[#eee] py-5 px-4">
+                    <div className="flex items-center space-x-3.5 justify-center">
+                      <Button
+                        onClick={() => handleEdit(category)}
+                        className="rounded-lg gap-1 duration-300 bg-yellow-200 hover:bg-yellow-400 text-yellow-500 hover:text-white"
+                      >
+                        <FaPen />
+                        Edit
+                      </Button>
+                      <Button
+                        className="rounded-lg gap-1 duration-300 bg-rose-200 hover:bg-rose-400 text-rose-500 hover:text-white"
+                        onClick={() => { setModalDeleteOpen(true); setDeleteData(category); }}
+                      >
+                        <FaTrash />
+                        Delete
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-6 md:mt-8 flex justify-center md:justify-end">
+          {/* <Pagination links={tiketCategories.meta.links} /> */}
+        </div>
     </AuthenticatedLayout>
   );
 }
